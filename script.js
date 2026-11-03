@@ -1,15 +1,14 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getFirestore, collection, doc, setDoc, deleteDoc, onSnapshot, updateDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// ==========================================
-// 1. KONFIGURASI FIREBASE (GANTI DENGAN PUNYA KAMU)
-// ==========================================
 const firebaseConfig = {
-    apiKey: "ISI_API_KEY_KAMU",
-    authDomain: "ISI_AUTH_DOMAIN_KAMU",
-    projectId: "ISI_PROJECT_ID_KAMU",
-    messagingSenderId: "ISI_SENDER_ID_KAMU",
-    appId: "ISI_APP_ID_KAMU"
+    apiKey: "AIzaSyC3zvhM9m-cQa_UPS5UvASs11kWIpYSt0M",
+    authDomain: "web-sina.firebaseapp.com",
+    projectId: "web-sina",
+    storageBucket: "web-sina.firebasestorage.app",
+    messagingSenderId: "516905491105",
+    appId: "1:516905491105:web:faf495b90f9fda8bc26ee0",
+    measurementId: "G-NYDT23XS97"
 };
 
 const app = initializeApp(firebaseConfig);
