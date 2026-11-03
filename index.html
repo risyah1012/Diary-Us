@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk My Binii</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Firebase SDK (Hanya App & Firestore, Storage tidak dipakai) -->
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+
+    <div id="stars-container"></div>
+
+    <!-- ================= HALAMAN 1: PASSWORD ================= -->
+    <div id="page1" class="page active">
+        <div class="glass-card">
+            <div class="icon-top">🌸>🌸>🌸</div>
+            <h1 class="title">Untuk Cantikuu<span class="heart-pulse">❤️</span></h1>
+            <p class="subtitle">
+                "Kamu selalu jadi alasan untuk aku bisa tersenyum, 
+                dan bahagia setiap hari. Thanks for Mamii❤️"
+            </p>
+            
+            <div class="password-container">
+                <input type="text" id="password-input" placeholder="Masukkan tanggal jadian (DDMMYYYY)">
+                <p id="error-msg">Kamu Gitu Lupa Tanggal Jadian 🥺</p>
+            </div>
+            
+            <button id="btn-open" class="btn-gradient">
+                Konfirmasi
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= HALAMAN 2: ORBIT & HATI ================= -->
+    <div id="page2" class="page">
+        
+        <button id="btn-back-password" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </button>
+
+        <button id="btn-to-gallery" class="btn-to-gallery">
+            <i class="fas fa-images"></i> Tentang Kita
+        </button>
+
+        <div class="orbit-container">
+            <div id="center-heart" class="center-heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div id="photos-wrapper"></div>
+        </div>
+
+        <div id="photo-preview" class="photo-preview">
+            <img id="preview-img" src="" alt="Preview">
+        </div>
+
+        <div id="message-overlay" class="message-overlay">
+            <div class="message-box">
+                <button id="btn-x-close" class="btn-x-close">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <div class="message-header">
+                    <h3>Love You Mamihh</h3>
+                </div>
+                <div class="message-content">
+                    <p>
+                        "Dari video ini aku abadikan kenangan kita, 
+                        rasanya bahagia banget kalo kamu ada didekatku ❤️
+                    </p>
+                    <div class="video-container">
+                        <video id="pesan-video" controls volume="1.0">
+                            <source src="video.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= HALAMAN 3: GALERI (TENTANG KITA) ================= -->
+    <div id="page3" class="page">
+        
+        <div class="gallery-layout">
+            
+            <!-- Bagian Kiri: Grid Foto -->
+            <div class="gallery-main">
+                
+                <div class="gallery-header">
+                    <h2 class="gallery-title">📸 Galeri Kenangan</h2>
+                    
+                    <div class="upload-controls">
+                        <input type="text" id="upload-date" placeholder="Contoh: 1 Jan 2024">
+                        <label for="upload-input" class="btn-upload">
+                            <i class="fas fa-plus"></i> Upload
+                        </label>
+                        <input type="file" id="upload-input" accept="image/*" multiple style="display: none;">
+                    </div>
+                </div>
+                
+                <div id="loading-gallery" style="text-align: center; color: #ff7eb3; margin-top: 20px;">Memuat galeri dari server...</div>
+                <div id="dynamic-photo-grid" class="photo-grid"></div>
+
+                <button id="btn-back-orbit" class="btn-gradient" style="margin-top: 20px;">⬅ Kembali</button>
+            </div>
+
+            <div class="gallery-divider"></div>
+
+            <div class="gallery-sidebar">
+                <div class="sidebar-content">
+                    <h3 contenteditable="true" class="editable" data-key="foodTitle">Food & Drinks Favorite :</h3>
+                    <ul class="fav-list" contenteditable="true" class="editable" data-key="foodList">
+                        <li>1. Ice Cream</li>
+                        <li>2. Es Cokelat</li>
+                        <li>3. Dimsum</li>
+                        <li>4. Americano</li>
+                    </ul>
+
+                    <div class="info-block" contenteditable="true" class="editable" data-key="infoSina">
+                        <p>Tinggi Badan Sina : 157 cm</p>
+                        <p>Berat Badan Sina : 46 kg</p>
+                    </div>
+
+                    <div class="info-block underline" contenteditable="true" class="editable" data-key="infoRisyah">
+                        <p>Tinggi Badan Risyah : 173 cm</p>
+                        <p>Berat Badan Risyah : 51 kg</p>
+                    </div>
+
+                    <div class="info-block underline" contenteditable="true" class="editable" data-key="infoDate">
+                        <p>25 Agustus 2026 | 23.02</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>
